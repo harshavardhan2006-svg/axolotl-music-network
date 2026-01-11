@@ -103,7 +103,7 @@ const SyncMusicDialog = ({ open, onClose, hall }: SyncMusicDialogProps) => {
          if (isAdmin) {
             console.log('[SyncMusicDialog] Admin stopping sync - pausing HALL playback');
             // Pause the HALL playback so everyone stops
-            await hallMusicApi.pause(hall._id);
+            await hallMusicApi.togglePlayback(hall._id);
             // Also pause local player just in case
             const playerStore = usePlayerStore.getState();
             if (playerStore.isPlaying) {
