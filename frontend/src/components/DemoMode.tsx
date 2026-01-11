@@ -1,1 +1,55 @@
-import { AlertCircle, Music } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nconst DemoMode = () => {\n  return (\n    <div className=\"min-h-screen bg-gradient-to-b from-zinc-900 to-black flex items-center justify-center p-4\">\n      <div className=\"max-w-md w-full text-center space-y-6\">\n        <div className=\"w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto\">\n          <Music size={40} className=\"text-white\" />\n        </div>\n        \n        <h1 className=\"text-3xl font-bold text-white\">\n          🎵 Axolotl Music Network\n        </h1>\n        \n        <div className=\"bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4\">\n          <div className=\"flex items-center gap-2 text-yellow-400 mb-2\">\n            <AlertCircle size={20} />\n            <span className=\"font-semibold\">Demo Mode</span>\n          </div>\n          <p className=\"text-yellow-200 text-sm\">\n            Backend server is not connected. This is a frontend-only preview.\n          </p>\n        </div>\n        \n        <div className=\"space-y-4 text-zinc-300\">\n          <h2 className=\"text-xl font-semibold text-white\">Features Include:</h2>\n          <ul className=\"text-left space-y-2\">\n            <li>🎵 Music streaming & playlists</li>\n            <li>🏛️ Virtual music halls</li>\n            <li>💬 Real-time chat</li>\n            <li>👥 Social features</li>\n            <li>📱 Mobile app support</li>\n            <li>🔐 Secure authentication</li>\n          </ul>\n        </div>\n        \n        <div className=\"pt-4\">\n          <Button \n            onClick={() => window.open('https://github.com/harshavardhan2006-svg/axolotl-music-network', '_blank')}\n            className=\"bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-3 rounded-lg\"\n          >\n            View Source Code\n          </Button>\n        </div>\n        \n        <p className=\"text-xs text-zinc-500\">\n          Full functionality available when backend is deployed\n        </p>\n      </div>\n    </div>\n  );\n};\n\nexport default DemoMode;
+import { AlertCircle, Music } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const DemoMode = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-zinc-900 to-black flex items-center justify-center p-4">
+      <div className="max-w-md w-full text-center space-y-6">
+        <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto">
+          <Music size={40} className="text-white" />
+        </div>
+        
+        <h1 className="text-3xl font-bold text-white">
+          Axolotl Music Network
+        </h1>
+        
+        <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+          <div className="flex items-center gap-2 text-yellow-400 mb-2">
+            <AlertCircle size={20} />
+            <span className="font-semibold">Demo Mode</span>
+          </div>
+          <p className="text-yellow-200 text-sm">
+            Backend server is not connected. This is a frontend-only preview.
+          </p>
+        </div>
+        
+        <div className="space-y-4 text-zinc-300">
+          <h2 className="text-xl font-semibold text-white">Features Include:</h2>
+          <ul className="text-left space-y-2">
+            <li>Music streaming & playlists</li>
+            <li>Virtual music halls</li>
+            <li>Real-time chat</li>
+            <li>Social features</li>
+            <li>Mobile app support</li>
+            <li>Secure authentication</li>
+          </ul>
+        </div>
+        
+        <div className="pt-4">
+          <Button 
+            onClick={() => window.open('https://github.com/harshavardhan2006-svg/axolotl-music-network', '_blank')}
+            className="bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-3 rounded-lg"
+          >
+            View Source Code
+          </Button>
+        </div>
+        
+        <p className="text-xs text-zinc-500">
+          Full functionality available when backend is deployed
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default DemoMode;
