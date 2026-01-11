@@ -178,7 +178,12 @@ app.use((err, req, res, next) => {
 	res.status(500).json({ message: process.env.NODE_ENV === "production" ? "Internal server error" : err.message });
 });
 
-httpServer.listen(PORT, () => {
+httpServer.listen(PORT, async () => {
 	console.log("Server is running on port " + PORT);
-	connectDB();
+	try {
+		await connectDB();
+		console.log("Database connected successfully");
+	} catch (error) {
+		console.error("Database connection failed:", error);
+	}
 });
