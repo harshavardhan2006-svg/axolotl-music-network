@@ -35,7 +35,11 @@ const PORT = process.env.PORT;
 const httpServer = createServer(app);
 const io = new SocketIOServer(httpServer, {
 	cors: {
-		origin: "http://localhost:3000",
+		origin: [
+			"http://localhost:3000",
+			"https://axolotl-music-network.vercel.app",
+			"https://*.vercel.app"
+		],
 		credentials: true,
 	},
 });
@@ -64,7 +68,12 @@ app.use(securityHeaders);
 
 app.use(
 	cors({
-		origin: ["http://localhost:3000", "http://localhost:3001"],
+		origin: [
+			"http://localhost:3000", 
+			"http://localhost:3001",
+			"https://axolotl-music-network.vercel.app",
+			"https://*.vercel.app"
+		],
 		credentials: true,
 	})
 );
