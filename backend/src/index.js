@@ -145,8 +145,20 @@ app.use("/api/albums", albumRoutes);
 app.use("/api/stats", statRoutes);
 
 // Health check route
-app.get("/api/health", (req, res) => {
-	res.json({ status: "OK", message: "Server is running" });
+app.get("/api/health", async (req, res) => {
+	try {
+		// Test database connection
+		const mongoose = await import('mongoose');
+		const dbStatus = mongoose.default.connection.readyState === 1 ? 'connected' : 'disconnected';
+		res.json({ 
+			status: "OK", 
+			message: "Server is running",
+			database: dbStatus,
+			timestamp: new Date().toISOString()
+		});
+	} catch (error) {
+		res.status(500).json({ status: "ERROR", message: error.message });
+	}
 });
 
 // Root API route

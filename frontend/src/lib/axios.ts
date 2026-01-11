@@ -10,7 +10,7 @@ const getBaseURL = () => {
 
 export const axiosInstance = axios.create({
 	baseURL: getBaseURL(),
-	timeout: 10000, // 10 second timeout
+	timeout: 30000, // 30 second timeout for production
 });
 
 // Add request interceptor to include auth token
