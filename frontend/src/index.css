@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Darkest Black Theme */
+        --background: 0 0% 0%;
+        --foreground: 0 0% 100%;
+
+        --card: 0 0% 3%;
+        --card-foreground: 0 0% 100%;
+
+        --popover: 0 0% 3%;
+        --popover-foreground: 0 0% 100%;
+
+        --primary: 0 0% 100%;
+        --primary-foreground: 0 0% 0%;
+
+        --secondary: 0 0% 10%;
+        --secondary-foreground: 0 0% 100%;
+
+        --muted: 0 0% 10%;
+        --muted-foreground: 0 0% 60%;
+
+        --accent: 0 0% 10%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 0 0% 20%;
+        --input: 0 0% 20%;
+        --ring: 0 0% 100%;
+
+        --radius: 0.75rem;
+    }
+
+    .dark {
+        --background: 0 0% 0%;
+        --foreground: 0 0% 100%;
+        /* ... keep other dark variables consistent or same as root */
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-white;
+        /* Darkest Black Glass Theme Background with Cyber Grid */
+        background-color: #000000;
+        background-image:
+            linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+        background-position: center top;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-xl shadow-black/50;
+    }
+
+    .glass-hover {
+        @apply transition-all duration-300;
+    }
+
+    .glass-hover:hover {
+        @apply bg-black/60 border-cyan-500/40;
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    }
+
+    .glossy-button {
+        @apply relative overflow-hidden bg-cyan-500 text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 font-bold;
+        background: linear-gradient(to bottom, #06b6d4, #0891b2);
+        box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .glossy-button::after {
+        content: '';
+        @apply absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent pointer-events-none;
+    }
+
+    .glossy-button:hover {
+        background: linear-gradient(to bottom, #22d3ee, #0e7490);
+        box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #52525b;
+        /* zinc-600 */
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #71717a;
+        /* zinc-500 */
+    }
+
+}
