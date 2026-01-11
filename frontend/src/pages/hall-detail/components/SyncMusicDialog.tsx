@@ -95,7 +95,7 @@ const SyncMusicDialog = ({ open, onClose, hall }: SyncMusicDialogProps) => {
          const { currentUserId } = useHallStore.getState();
          const isAdmin = typeof hall.adminId === 'string' 
             ? hall.adminId === currentUserId
-            : hall.adminId._id === currentUserId;
+            : hall.adminId?._id === currentUserId;
             
 
 
@@ -105,7 +105,10 @@ const SyncMusicDialog = ({ open, onClose, hall }: SyncMusicDialogProps) => {
             // Pause the HALL playback so everyone stops
             await hallMusicApi.pause(hall._id);
             // Also pause local player just in case
-            usePlayerStore.getState().togglePlay(); 
+            const playerStore = usePlayerStore.getState();
+            if (playerStore.isPlaying) {
+              playerStore.togglePlay();
+            } 
          }
       }
 

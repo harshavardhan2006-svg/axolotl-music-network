@@ -20,7 +20,7 @@ interface PlayerStore {
 }
 
 import { useHallStore } from "./useHallStore";
-import { useAuthStore } from "./useAuthStore";
+
 
 // Helper to check if we should emit hall event
 const shouldEmitHallEvent = () => {

@@ -17,7 +17,7 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { useState, useEffect } from "react";
 import { useHallStore } from "@/stores/useHallStore";
-import toast from "react-hot-toast";
+
 
 interface QueueDialogProps {
   open: boolean;
