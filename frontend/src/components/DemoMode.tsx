@@ -19,34 +19,26 @@ const DemoMode = () => {
             <span className="font-semibold">Demo Mode</span>
           </div>
           <p className="text-yellow-200 text-sm">
-            Backend server is not connected. This is a frontend-only preview.
+            Backend server is not connected.
           </p>
         </div>
         
         <div className="space-y-4 text-zinc-300">
-          <h2 className="text-xl font-semibold text-white">Features Include:</h2>
+          <h2 className="text-xl font-semibold text-white">Features:</h2>
           <ul className="text-left space-y-2">
-            <li>Music streaming & playlists</li>
-            <li>Virtual music halls</li>
+            <li>Music streaming</li>
+            <li>Virtual halls</li>
             <li>Real-time chat</li>
             <li>Social features</li>
-            <li>Mobile app support</li>
-            <li>Secure authentication</li>
           </ul>
         </div>
         
-        <div className="pt-4">
-          <Button 
-            onClick={() => window.open('https://github.com/harshavardhan2006-svg/axolotl-music-network', '_blank')}
-            className="bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-3 rounded-lg"
-          >
-            View Source Code
-          </Button>
-        </div>
-        
-        <p className="text-xs text-zinc-500">
-          Full functionality available when backend is deployed
-        </p>
+        <Button 
+          onClick={() => window.open('https://github.com/harshavardhan2006-svg/axolotl-music-network', '_blank')}
+          className="bg-green-600 hover:bg-green-500 text-white"
+        >
+          View Code
+        </Button>
       </div>
     </div>
   );
