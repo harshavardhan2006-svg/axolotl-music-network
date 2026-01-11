@@ -21,3 +21,19 @@ CLERK_SECRET_KEY=...
 ```bash
 VITE_CLERK_PUBLISHABLE_KEY=...
 ```
+/frontend:
+
+npm install
+
+npm run build
+
+npm run dev
+
+
+/backend:
+
+npm install
+
+npm run dev
+
+-----------------------------------------------
