@@ -135,6 +135,16 @@ app.use("/api/songs", songRoutes);
 app.use("/api/albums", albumRoutes);
 app.use("/api/stats", statRoutes);
 
+// Health check route
+app.get("/api/health", (req, res) => {
+	res.json({ status: "OK", message: "Server is running" });
+});
+
+// Root API route
+app.get("/api", (req, res) => {
+	res.json({ message: "Axolotl Music Network API", status: "running" });
+});
+
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "../frontend/dist")));
 	app.get("*", (req, res) => {
