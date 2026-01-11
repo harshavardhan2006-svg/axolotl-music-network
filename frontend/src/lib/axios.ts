@@ -1,7 +1,15 @@
 import axios from "axios";
 
+// Use environment variable for API URL, fallback to localhost for development
+const getBaseURL = () => {
+	if (import.meta.env.VITE_API_URL) {
+		return import.meta.env.VITE_API_URL;
+	}
+	return import.meta.env.MODE === "development" ? "http://localhost:5000/api" : "/api";
+};
+
 export const axiosInstance = axios.create({
-	baseURL: import.meta.env.MODE === "development" ? "http://localhost:5000/api" : "/api",
+	baseURL: getBaseURL(),
 	timeout: 10000, // 10 second timeout
 });
 
